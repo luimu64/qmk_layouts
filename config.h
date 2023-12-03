@@ -24,10 +24,6 @@
 #    define MOUSEKEY_WHEEL_TIME_TO_MAX 100
 #endif
 
-#ifdef RGBLIGHT_ENABLE
-#   define RGBLIGHT_EFFECT_SNAKE
-#endif
-
 #define LED_CAPS_LOCK_PIN 24
 #define LED_PIN_ON_STATE 0   
 #define RGB_MATRIX_DEFAULT_HUE 200
