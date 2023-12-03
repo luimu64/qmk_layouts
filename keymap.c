@@ -1,4 +1,3 @@
-/* Copyright 2023 ChuseCubr */
 /* Copyright 2023 Luimu */
 /* https://github.com/ChuseCubr/mini-ryoku */
 
