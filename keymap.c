@@ -68,14 +68,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_GAMING] = LAYOUT(
   /*   ,-------------------------------------------------.    ,-------------------------------------------------.   */\
-  /*   | TAB      | Q       | W       | E       | R      |    | Y       | U       | I       | O       | P       |   */\
-         KC_TAB   , KC_Q    , KC_W    , KC_E    , KC_R   ,      KC_Y    , KC_U    , KC_I    , KC_O    , KC_P    ,     \
+  /*   | TAB      | Q       | W       | E       | R      |    | Y       | U       | ▲       | O       | P       |   */\
+         KC_TAB   , KC_Q    , KC_W    , KC_E    , KC_R   ,      KC_Y    , KC_U    , KC_UP   , KC_O    , KC_P    ,     \
   /*   |-------------------------------------------------|    |-------------------------------------------------|   */\
-  /*   | SHIFT    | A       | S       | D       | F      |    | H       | J       | K       | L       | BASE    |   */\
-         KC_LSFT  , KC_A    , KC_S    , KC_D    , KC_F   ,      KC_H    , KC_J    , KC_K    , KC_L    , GM_QUIT ,     \
+  /*   | SHIFT    | A       | S       | D       | F      |    | H       | ◀       | ▼       | ▶      | BASE    |   */\
+         KC_LSFT  , KC_A    , KC_S    , KC_D    , KC_F   ,      KC_H    , KC_LEFT , KC_DOWN , KC_RIGHT, GM_QUIT ,     \
   /*   |-------------------------------------------------|    |-------------------------------------------------|   */\
-  /*   | CTRL     | Z       | X       | C       | V      |    | N       | M       | , <     | . >     | / ?     |   */\
-         KC_LCTL  , KC_Z    , KC_X    , KC_C    , KC_V   ,      KC_N    , KC_M    , KC_COMM , KC_DOT  , KC_SLSH ,     \
+  /*   | CTRL     | Z       | X       | C       | V      |    | N       | M       | , <     | . >     | I       |   */\
+         KC_LCTL  , KC_Z    , KC_X    , KC_C    , KC_V   ,      KC_N    , KC_M    , KC_COMM , KC_DOT  , KC_I    ,     \
   /*   `-------------------------------------------------|    |-------------------------------------------------'   */\
   
   /*                                 | SPACE   | ESC     |    | ENTER   | BSPC    |                                 */\
