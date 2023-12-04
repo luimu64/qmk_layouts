@@ -20,8 +20,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_BASE] = LAYOUT(
   /*   ,-------------------------------------------------.    ,-------------------------------------------------.   */
-  /*   | . ,     | Ä       | Ö       | P       | Y       |    | F       | G       | C       | R       | L       |   */
-         KC_DOT  , US_ADIA , US_ODIA , KC_P    , KC_Y    ,      KC_F    , KC_G    , KC_C    , KC_R    , KC_L    ,     
+  /*   | , .     | Ä       | Ö       | P       | Y       |    | F       | G       | C       | R       | L       |   */
+         KC_COMM , US_ADIA , US_ODIA , KC_P    , KC_Y    ,      KC_F    , KC_G    , KC_C    , KC_R    , KC_L    ,     
   /*   |-------------------------------------------------|    |-------------------------------------------------|   */
   /*   | A       | O       | E       | U       | I       |    | D       | H       | T       | N       | S       |   */
          KC_A    , KC_O    , KC_E    , KC_U    , KC_I    ,      KC_D    , KC_H    , KC_T    , KC_N    , KC_S    ,     
@@ -91,7 +91,7 @@ void keyboard_post_init_user(void) {
 }
 #endif
 
-const key_override_t comma_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_DOT, KC_COMMA );
+const key_override_t comma_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_COMMA, KC_DOT);
 
 // This globally defines all key overrides to be used
 const key_override_t **key_overrides = (const key_override_t *[]){
