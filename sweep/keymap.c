@@ -58,11 +58,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   /*   | PASTE   | F4      | F5      | F6      | F11     |    | MIDDLE  | ←       | ↓       | →       | GAMING  |   */
          FU_PASTE, KC_F4   , KC_F5   , KC_F6   , KC_F11  ,      KC_BTN3 , KC_MS_L , KC_MS_D , KC_MS_R , FU_GAME ,
   /*   |-------------------------------------------------|    |-------------------------------------------------|   */
-  /*   | MUTE    | F1      | F2      | F3      | F10     |    | VOL +   | <<      | PLAY    | >>      | VOL -   |   */
-         MT_MUTE , MT_F1   , MT_F2   , MT_F3   , KC_F10  ,      KC_VOLU , MT_MPRV , MT_MPLY , MT_MNXT , MT_VOLD,     
+  /*   | LED TOG | F1      | F2      | F3      | F10     |    | LED HUE | <<      | PLAY    | >>      | LED SAT |   */
+         RGB_TOG , MT_F1   , MT_F2   , MT_F3   , KC_F10  ,      RGB_HUI , MT_MPRV , MT_MPLY , MT_MNXT , RGB_SAI ,     
   /*   `-------------------------------------------------|    |-------------------------------------------------'   */
-  /*                                 |         |         |    | RIGHT   | LEFT    |                                 */
-                                       KC_NO   , KC_TRNS ,      KC_BTN2 , KC_BTN1
+  /*                                 | Win     |         |    | RIGHT   | LEFT    |                                 */
+                                       KC_LGUI , KC_TRNS ,      KC_BTN2 , KC_BTN1
   /*                                 `-------------------'    `-------------------'                                 */
   ),
 
@@ -83,13 +83,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   /*                                 `-------------------'    `-------------------'                                 */
   )
 };
-
-#ifdef RGBLIGHT_ENABLE
-void keyboard_post_init_user(void) {
-  rgblight_enable_noeeprom(); // enables RGB
-  rgblight_sethsv_noeeprom(HSV_TEAL); // sets the color
-}
-#endif
 
 const key_override_t comma_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_COMMA, KC_DOT);
 

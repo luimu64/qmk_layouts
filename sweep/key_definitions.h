@@ -17,8 +17,6 @@
 #define LT_TAB LT(_FUN, KC_TAB)
 #define LT_ENT LT(_SYM, KC_ENT)
 
-
-
 /* Sym Layer */
 #define MT_GRV LGUI_T(KC_GRV)
 #define MT_1 LALT_T(KC_1)
@@ -34,7 +32,6 @@
 #define ARRRIGHT S(KC_DOT)
 
 /* Fun Layer */
-#define MT_MUTE LGUI_T(KC_MUTE)
 #define MT_F1 LALT_T(KC_F1)
 #define MT_F2 LCTL_T(KC_F2)
 #define MT_F3 LSFT_T(KC_F3)
@@ -42,7 +39,6 @@
 #define MT_MPRV RSFT_T(KC_MPRV)
 #define MT_MPLY RCTL_T(KC_MPLY)
 #define MT_MNXT RALT_T(KC_MNXT)
-#define MT_VOLD RGUI_T(KC_VOLD)
 
 #define FU_COPY LCTL(KC_C)
 #define FU_PASTE LCTL(KC_V)
