@@ -2,14 +2,6 @@
 
 My personal layout based on mini-ryoku with heavy modifications like changing the alpha to dvorak and adding ä and ö.
 
-## Symlink location
-
-`qmk-firmware/keyboards/splitkb/aurora/sweep/rev1/keymaps/luimu`
-
-## Compiling
-
-`qmk compile -e CONVERT_TO=liatris -kb splitkb/aurora/sweep/rev1 -km luimu`
-
 ### Base layer
 
 ```
