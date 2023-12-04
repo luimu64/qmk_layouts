@@ -1,13 +1,16 @@
-#Aurora sweep
+# Aurora sweep
+
 My personal layout based on mini-ryoku with heavy modifications like changing the alpha to dvorak and adding ä and ö.
 
-##Symlink location
+## Symlink location
+
 `qmk-firmware/keyboards/splitkb/aurora/sweep/rev1/keymaps/luimu`
 
-##Compiling
+## Compiling
+
 `qmk compile -e CONVERT_TO=liatris -kb splitkb/aurora/sweep/rev1 -km luimu`
 
-###Base layer
+### Base layer
 
 ```
      ,-------------------------------------------------.    ,-------------------------------------------------.
@@ -21,7 +24,7 @@ My personal layout based on mini-ryoku with heavy modifications like changing th
                                    `-------------------'    `-------------------'
 ```
 
-###Symbol/Number/Arrow key layer
+### Symbol/Number/Arrow key layer
 
 ```
      ,-------------------------------------------------.    ,-------------------------------------------------.
@@ -36,7 +39,7 @@ My personal layout based on mini-ryoku with heavy modifications like changing th
 
 ```
 
-###Function/Mouse layer
+### Function/Mouse layer
 
 ```
      ,-------------------------------------------------.    ,-------------------------------------------------.
@@ -50,7 +53,7 @@ My personal layout based on mini-ryoku with heavy modifications like changing th
                                    `-------------------'    `-------------------'
 ```
 
-###Gaming layer
+### Gaming layer
 
 ```
      ,-------------------------------------------------.    ,-------------------------------------------------.
