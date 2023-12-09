@@ -18,18 +18,17 @@
 #define LT_ENT LT(_SYM, KC_ENT)
 
 /* Sym Layer */
-#define MT_GRV LGUI_T(KC_GRV)
-#define MT_1 LALT_T(KC_1)
-#define MT_2 LCTL_T(KC_2)
-#define MT_3 LSFT_T(KC_3)
+#define SY_QUES S(KC_SLSH)
+#define SY_HASH S(KC_3)
+#define SY_EXCL S(KC_1)
 
 #define MT_HOME RSFT_T(KC_HOME)
 #define MT_INS RCTL_T(KC_INSERT)
 #define MT_DEL RALT_T(KC_DEL)
 #define MT_END RGUI_T(KC_END)
 
-#define ARRLEFT S(KC_COMMA)
-#define ARRRIGHT S(KC_DOT)
+#define SY_LESS S(KC_COMMA)
+#define SY_MORE S(KC_DOT)
 
 /* Fun Layer */
 #define MT_F1 LALT_T(KC_F1)

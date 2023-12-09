@@ -27,32 +27,32 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
          KC_A    , KC_O    , KC_E    , KC_U    , KC_I    ,      KC_D    , KC_H    , KC_T    , KC_N    , KC_S    ,     
   /*   |-------------------------------------------------|    |-------------------------------------------------|   */
   /*   | ' "     | Q       | J       | K       | X       |    | B       | M       | W       | V       | Z       |   */
-         MT_QUOT , MT_Q    , MT_J    , MT_K    , KC_X    ,      KC_B    , MT_M    , MT_W    , MT_V    , MT_Z    ,     
+         MT_QUOT , MT_Q    , MT_J    , MT_K    , KC_X    ,      KC_B    , MT_M    , MT_W    , MT_V    , KC_Z    ,     
   /*   `-------------------------------------------------|    |-------------------------------------------------'   */
   /*                                 | SPACE   | TAB     |    | ENTER   | BSPC    |                                 */
-                                       KC_SPC  , LT_TAB  ,      LT_ENT  , KC_BSPC 
+                                       KC_SPC  , LT_TAB  ,      LT_ENT  , KC_BSPC  
   /*                                 `-------------------'    `-------------------'                                 */
   ),
-
+ 
   [_SYM] = LAYOUT(
   /*   ,-------------------------------------------------.    ,-------------------------------------------------.   */
   /*   | ; :     | 7 &     | 8 *     | 9 (     | 0 )     |    | <       | >        | ▲       | CAPS   | PG UP   |   */
-         KC_SCLN , KC_7    , KC_8    , KC_9    , KC_0    ,      ARRLEFT , ARRRIGHT , KC_UP   , KC_CAPS, KC_PGUP ,     
+         KC_SCLN , KC_7    , KC_8    , KC_9    , KC_0    ,      SY_LESS , SY_MORE  , KC_UP   , KC_CAPS, KC_PGUP ,     
   /*   |-------------------------------------------------|    |-------------------------------------------------|   */
-  /*   | [ {     | 4 $     | 5 %     | 6 ^     | ] }     |    | / ?     | ◀       | ▼       | ▶      | PG DN   |   */
-         KC_LBRC , KC_4    , KC_5    , KC_6    , KC_RBRC ,      KC_SLASH, KC_LEFT , KC_DOWN , KC_RGHT , KC_PGDN ,     
+  /*   | / \     | 4 $     | 5 %     | 6 [     | ? ]     |    | # ^     | ◀       | ▼       | ▶      | PG DN   |   */
+         KC_SLSH , KC_4    , KC_5    , KC_6    , SY_QUES ,      SY_HASH , KC_LEFT , KC_DOWN , KC_RGHT , KC_PGDN ,     
   /*   |-------------------------------------------------|    |-------------------------------------------------|   */
-  /*   | ` ~     | 1 !     | 2 @     | 3 #     | \ |     |    | ESC     | HOME    | INSERT  | DEL     | END     |   */
-         MT_GRV  , MT_1    , MT_2    , MT_3    , KC_BSLS ,      KC_ESC  , MT_HOME , MT_INS  , MT_DEL  , MT_END  ,     
+  /*   | ` ~     | 1 |     | 2 @     | 3 {     | ! }     |    | ESC     | HOME    | INSERT  | DEL     | END     |   */
+         KC_GRV  , KC_1    , KC_2    , KC_3    , SY_EXCL ,      KC_ESC  , MT_HOME , MT_INS  , MT_DEL  , MT_END  ,     
   /*   `-------------------------------------------------|    |-------------------------------------------------'   */
-  /*                                 | - _     |  = +    |    |         |         |                                 */
-                                       KC_MINS ,  KC_EQL ,      KC_TRNS , KC_NO     
+  /*                                 | - _     |  = +    |    |         | WIN     |                                 */
+                                       KC_MINS ,  KC_EQL ,      KC_TRNS , KC_RGUI     
   /*                                 `-------------------'    `-------------------'                                 */
   ),
 
   [_FUN] = LAYOUT(
   /*   ,-------------------------------------------------.    ,-------------------------------------------------.   */
-  /*   | COPY   | F7      | F8      | F9      | F12     |    | ⇐       | ⇑       | ↑       | ⇓       | ⇒      |   */
+  /*   | COPY   | F7      | F8      | F9      | F12      |    | ⇐       | ⇑       | ↑       | ⇓       | ⇒      |   */
          FU_COPY, KC_F7   , KC_F8   , KC_F9   , KC_F12  ,      KC_WH_L , KC_WH_U , KC_MS_U , KC_WH_D , KC_WH_R ,
   /*   |-------------------------------------------------|    |-------------------------------------------------|   */
   /*   | PASTE   | F4      | F5      | F6      | F11     |    | MIDDLE  | ←       | ↓       | →       | GAMING  |   */
@@ -61,7 +61,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   /*   | LED TOG | F1      | F2      | F3      | F10     |    | LED HUE | <<      | PLAY    | >>      | LED SAT |   */
          RGB_TOG , MT_F1   , MT_F2   , MT_F3   , KC_F10  ,      RGB_HUI , MT_MPRV , MT_MPLY , MT_MNXT , RGB_SAI ,     
   /*   `-------------------------------------------------|    |-------------------------------------------------'   */
-  /*                                 | Win     |         |    | RIGHT   | LEFT    |                                 */
+  /*                                 | WIN     |         |    | RIGHT   | LEFT    |                                 */
                                        KC_LGUI , KC_TRNS ,      KC_BTN2 , KC_BTN1
   /*                                 `-------------------'    `-------------------'                                 */
   ),
@@ -85,9 +85,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 const key_override_t comma_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_COMMA, KC_DOT);
+const key_override_t slash_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_SLASH, KC_BSLS);
+const key_override_t six_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_6, KC_LBRC);
+const key_override_t question_key_override = ko_make_basic(MOD_MASK_SHIFT, S(KC_SLASH), KC_RBRC);
+const key_override_t hashtag_key_override = ko_make_basic(MOD_MASK_SHIFT, S(KC_3), S(KC_6));
+const key_override_t three_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_3, S(KC_LBRC));
+const key_override_t one_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_1, S(KC_BSLS));
+const key_override_t exclamation_key_override = ko_make_basic(MOD_MASK_SHIFT, S(KC_1), S(KC_RBRC));
+
 
 // This globally defines all key overrides to be used
 const key_override_t **key_overrides = (const key_override_t *[]){
     &comma_key_override,
+    &slash_key_override,
+    &six_key_override,
+    &question_key_override,
+    &hashtag_key_override,
+    &three_key_override,
+    &exclamation_key_override,
+    &one_key_override,    
     NULL // Null terminate the array of overrides!
 };
