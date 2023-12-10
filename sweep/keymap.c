@@ -27,7 +27,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
          KC_A    , KC_O    , KC_E    , KC_U    , KC_I    ,      KC_D    , KC_H    , KC_T    , KC_N    , KC_S    ,     
   /*   |-------------------------------------------------|    |-------------------------------------------------|   */
   /*   | ' "     | Q       | J       | K       | X       |    | B       | M       | W       | V       | Z       |   */
-         MT_QUOT , MT_Q    , MT_J    , MT_K    , KC_X    ,      KC_B    , MT_M    , MT_W    , MT_V    , KC_Z    ,     
+         MT_QUOT , MT_Q    , MT_J    , MT_K    , KC_X    ,      KC_B    , MT_M    , MT_W    , MT_V    , MT_Z    ,     
   /*   `-------------------------------------------------|    |-------------------------------------------------'   */
   /*                                 | SPACE   | TAB     |    | ENTER   | BSPC    |                                 */
                                        KC_SPC  , LT_TAB  ,      LT_ENT  , KC_BSPC  
@@ -52,11 +52,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_FUN] = LAYOUT(
   /*   ,-------------------------------------------------.    ,-------------------------------------------------.   */
-  /*   | COPY   | F7      | F8      | F9      | F12      |    | ⇐       | ⇑       | ↑       | ⇓       | ⇒      |   */
-         FU_COPY, KC_F7   , KC_F8   , KC_F9   , KC_F12  ,      KC_WH_L , KC_WH_U , KC_MS_U , KC_WH_D , KC_WH_R ,
+  /*   | COPY    | F7      | F8      | F9      | F12     |    | ⇐       | ⇑       | ↑       | ⇓       | ⇒      |   */
+         FU_COPY , KC_F7   , KC_F8   , KC_F9   , KC_F12  ,      KC_WH_L , KC_WH_U , KC_MS_U , KC_WH_D , KC_WH_R ,
   /*   |-------------------------------------------------|    |-------------------------------------------------|   */
-  /*   | PASTE   | F4      | F5      | F6      | F11     |    | MIDDLE  | ←       | ↓       | →       | GAMING  |   */
-         FU_PASTE, KC_F4   , KC_F5   , KC_F6   , KC_F11  ,      KC_BTN3 , KC_MS_L , KC_MS_D , KC_MS_R , FU_GAME ,
+  /*   | PASTE   | F4      | F5      | F6      | F11     |    | MIDDLE  | ←       | ↓       | →       | LED BRI |   */
+         FU_PASTE, KC_F4   , KC_F5   , KC_F6   , KC_F11  ,      KC_BTN3 , KC_MS_L , KC_MS_D , KC_MS_R , RGB_VAI ,
   /*   |-------------------------------------------------|    |-------------------------------------------------|   */
   /*   | LED TOG | F1      | F2      | F3      | F10     |    | LED HUE | <<      | PLAY    | >>      | LED SAT |   */
          RGB_TOG , MT_F1   , MT_F2   , MT_F3   , KC_F10  ,      RGB_HUI , MT_MPRV , MT_MPLY , MT_MNXT , RGB_SAI ,     
@@ -67,18 +67,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [_GAMING] = LAYOUT(
-  /*   ,-------------------------------------------------.    ,-------------------------------------------------.   */\
-  /*   | TAB      | Q       | W       | E       | R      |    | Y       | U       | ▲       | O       | P       |   */\
-         KC_TAB   , KC_Q    , KC_W    , KC_E    , KC_R   ,      KC_Y    , KC_U    , KC_UP   , KC_O    , KC_P    ,     \
-  /*   |-------------------------------------------------|    |-------------------------------------------------|   */\
-  /*   | SHIFT    | A       | S       | D       | F      |    | H       | ◀       | ▼       | ▶      | BASE    |   */\
-         KC_LSFT  , KC_A    , KC_S    , KC_D    , KC_F   ,      KC_H    , KC_LEFT , KC_DOWN , KC_RIGHT, GM_QUIT ,     \
-  /*   |-------------------------------------------------|    |-------------------------------------------------|   */\
-  /*   | CTRL     | Z       | X       | C       | V      |    | N       | M       | , <     | . >     | I       |   */\
-         KC_LCTL  , KC_Z    , KC_X    , KC_C    , KC_V   ,      KC_N    , KC_M    , KC_COMM , KC_DOT  , KC_I    ,     \
-  /*   `-------------------------------------------------|    |-------------------------------------------------'   */\
-  
-  /*                                 | SPACE   | ESC     |    | ENTER   | BSPC    |                                 */\
+  /*   ,-------------------------------------------------.    ,-------------------------------------------------.   */
+  /*   | TAB      | Q       | W       | E       | R      |    | T       | Y       | ▲       | I       | O       |   */
+         KC_TAB   , KC_Q    , KC_W    , KC_E    , KC_R   ,      KC_T    , KC_Y    , KC_UP   , KC_I    , KC_O    ,     
+  /*   |-------------------------------------------------|    |-------------------------------------------------|   */
+  /*   | SHIFT    | A       | S       | D       | F      |    | G       | ◀       | ▼       | ▶      | L       |   */
+         KC_LSFT  , KC_A    , KC_S    , KC_D    , KC_F   ,      KC_G    , KC_LEFT , KC_DOWN , KC_RIGHT, KC_L    ,     
+  /*   |-------------------------------------------------|    |-------------------------------------------------|   */
+  /*   | CTRL     | Z       | X       | C       | V      |    | B       | N       | M       | U       | K       |   */
+         KC_LCTL  , KC_Z    , KC_X    , KC_C    , KC_V   ,      KC_B    , KC_N    , KC_M    , KC_U    , KC_K    ,     
+  /*   `-------------------------------------------------|    |-------------------------------------------------'   */
+  /*                                 | SPACE   | ESC     |    | ENTER   | BSPC    |                                 */
                                        KC_SPC  , KC_ESC  ,      KC_ENT  , KC_BSPC
   /*                                 `-------------------'    `-------------------'                                 */
   )
@@ -93,8 +92,6 @@ const key_override_t three_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_3, S(
 const key_override_t one_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_1, S(KC_BSLS));
 const key_override_t exclamation_key_override = ko_make_basic(MOD_MASK_SHIFT, S(KC_1), S(KC_RBRC));
 
-
-// This globally defines all key overrides to be used
 const key_override_t **key_overrides = (const key_override_t *[]){
     &comma_key_override,
     &slash_key_override,
@@ -103,6 +100,19 @@ const key_override_t **key_overrides = (const key_override_t *[]){
     &hashtag_key_override,
     &three_key_override,
     &exclamation_key_override,
-    &one_key_override,    
-    NULL // Null terminate the array of overrides!
+    &one_key_override,
+    NULL
+};
+
+enum combo_events {
+    TG_GAMING_ENTER,
+    TG_GAMING_LEAVE,
+};
+
+const uint16_t PROGMEM gaming_enter_combo[] = {LT_ENT, LT_TAB, COMBO_END};
+const uint16_t PROGMEM gaming_leave_combo[] = {KC_ESC, KC_ENT, COMBO_END};
+
+combo_t key_combos[] = {
+  [TG_GAMING_ENTER] = COMBO(gaming_enter_combo, DF(_GAMING)),
+  [TG_GAMING_LEAVE] = COMBO(gaming_leave_combo, DF(_BASE)),
 };
