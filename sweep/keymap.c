@@ -9,9 +9,10 @@
 
 enum layers {
   _BASE = 0,
-  _SYM,
-  _FUN,
+  _SYMBOL,
+  _FUNCTION,
   _GAMING,
+  _GAMING_FUNNUM,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -34,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   /*                                 `-------------------'    `-------------------'                                 */
   ),
  
-  [_SYM] = LAYOUT(
+  [_SYMBOL] = LAYOUT(
   /*   ,-------------------------------------------------.    ,-------------------------------------------------.   */
   /*   | ; :     | 7 &     | 8 *     | 9 (     | 0 )     |    | <       | >        | ▲       | CAPS   | PG UP   |   */
          KC_SCLN , KC_7    , KC_8    , KC_9    , KC_0    ,      SY_LESS , SY_MORE  , KC_UP   , KC_CAPS, KC_PGUP ,     
@@ -50,7 +51,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   /*                                 `-------------------'    `-------------------'                                 */
   ),
 
-  [_FUN] = LAYOUT(
+  [_FUNCTION] = LAYOUT(
   /*   ,-------------------------------------------------.    ,-------------------------------------------------.   */
   /*   | COPY    | F7      | F8      | F9      | F12     |    | ⇐       | ⇑       | ↑       | ⇓       | ⇒      |   */
          FU_COPY , KC_F7   , KC_F8   , KC_F9   , KC_F12  ,      KC_WH_L , KC_WH_U , KC_MS_U , KC_WH_D , KC_WH_R ,
@@ -77,10 +78,26 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   /*   | CTRL     | Z       | X       | C       | V      |    | B       | N       | M       | U       | K       |   */
          KC_LCTL  , KC_Z    , KC_X    , KC_C    , KC_V   ,      KC_B    , KC_N    , KC_M    , KC_U    , KC_K    ,     
   /*   `-------------------------------------------------|    |-------------------------------------------------'   */
-  /*                                 | SPACE   | ESC     |    | ENTER   | BSPC    |                                 */
-                                       KC_SPC  , KC_ESC  ,      KC_ENT  , KC_BSPC
+  /*                                 | SPACE   | FUN     |    | ENTER   | BSPC    |                                 */
+                                       KC_SPC  , GM_NUM  ,      KC_ENT  , KC_BSPC
   /*                                 `-------------------'    `-------------------'                                 */
-  )
+  ),
+
+    [_GAMING_FUNNUM] = LAYOUT(
+  /*   ,-------------------------------------------------.    ,-------------------------------------------------.   */
+  /*   | F1      | 7       | 8       | 9       | F4      |    | F7      | NUM 7   | NUM 8   | NUM 9   | F10     |   */
+         KC_F1   , KC_7    , KC_8    , KC_9    , KC_F4   ,      KC_F7   , KC_P7   , KC_P8   , KC_P9   , KC_F10  ,     
+  /*   |-------------------------------------------------|    |-------------------------------------------------|   */
+  /*   | F2      | 4       | 5       | 6       | F5      |    | F8      | NUM 4   | NUM 5   | NUM 6   | F11     |   */
+         KC_F2   , KC_4    , KC_5    , KC_6    , KC_F5   ,      KC_F8   , KC_P4   , KC_P5   , KC_P6   , KC_F11  ,     
+  /*   |-------------------------------------------------|    |-------------------------------------------------|   */
+  /*   | F3      | 1       | 2       | 3       | F6      |    | F9      | NUM 1   | NUM 2   | NUM 3   | F12     |   */
+         KC_F3   , KC_1    , KC_2    , KC_3    , KC_F6   ,      KC_F9   , KC_P1   , KC_P2   , KC_P3   , KC_F12  ,     
+  /*   `-------------------------------------------------|    |-------------------------------------------------'   */
+  /*                                 |         |         |    | NUM LCK | NUM 0   |                                 */
+                                       KC_TRNS , KC_TRNS ,      KC_NUM  , KC_P0     
+  /*                                 `-------------------'    `-------------------'                                 */
+  ),
 };
 
 const key_override_t comma_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_COMMA, KC_DOT);
@@ -105,14 +122,17 @@ const key_override_t **key_overrides = (const key_override_t *[]){
 };
 
 enum combo_events {
-    TG_GAMING_ENTER,
-    TG_GAMING_LEAVE,
+    GAMING_ENTER,
+    GAMING_LEAVE,
+    GAMING_ESC,
 };
 
 const uint16_t PROGMEM gaming_enter_combo[] = {LT_ENT, LT_TAB, COMBO_END};
-const uint16_t PROGMEM gaming_leave_combo[] = {KC_ESC, KC_ENT, COMBO_END};
+const uint16_t PROGMEM gaming_leave_combo[] = {GM_NUM, KC_ENT, COMBO_END};
+const uint16_t PROGMEM gaming_esc_combo[] = {GM_NUM, KC_TAB, COMBO_END};
 
 combo_t key_combos[] = {
-  [TG_GAMING_ENTER] = COMBO(gaming_enter_combo, DF(_GAMING)),
-  [TG_GAMING_LEAVE] = COMBO(gaming_leave_combo, DF(_BASE)),
+  [GAMING_ENTER] = COMBO(gaming_enter_combo, DF(_GAMING)),
+  [GAMING_LEAVE] = COMBO(gaming_leave_combo, DF(_BASE)),
+  [GAMING_ESC] = COMBO(gaming_esc_combo, KC_ESC),
 };

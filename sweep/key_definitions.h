@@ -14,14 +14,10 @@
 #define MT_V RALT_T(KC_V)
 #define MT_Z RGUI_T(KC_Z)
 
-#define LT_TAB LT(_FUN, KC_TAB)
-#define LT_ENT LT(_SYM, KC_ENT)
+#define LT_TAB LT(_FUNCTION, KC_TAB)
+#define LT_ENT LT(_SYMBOL, KC_ENT)
 
-/* Sym Layer */
-#define SY_QUES S(KC_SLSH)
-#define SY_HASH S(KC_3)
-#define SY_EXCL S(KC_1)
-
+/* Symbol Layer */
 #define MT_HOME RSFT_T(KC_HOME)
 #define MT_INS RCTL_T(KC_INSERT)
 #define MT_DEL RALT_T(KC_DEL)
@@ -29,8 +25,11 @@
 
 #define SY_LESS S(KC_COMMA)
 #define SY_MORE S(KC_DOT)
+#define SY_QUES S(KC_SLSH)
+#define SY_HASH S(KC_3)
+#define SY_EXCL S(KC_1)
 
-/* Fun Layer */
+/* Funtion Layer */
 #define MT_F1 LALT_T(KC_F1)
 #define MT_F2 LCTL_T(KC_F2)
 #define MT_F3 LSFT_T(KC_F3)
@@ -42,18 +41,5 @@
 #define FU_COPY LCTL(KC_C)
 #define FU_PASTE LCTL(KC_V)
 
-#define FU_GAME DF(_GAMING)
-
 /* Gaming Layer */
-
-#define GM_B LGUI_T(KC_B)
-#define GM_Z LALT_T(KC_Z)
-#define GM_X LCTL_T(KC_X)
-#define GM_C LSFT_T(KC_C)
-
-#define GM_M RSFT_T(KC_M)
-#define GM_COMM RCTL_T(KC_COMM)
-#define GM_DOT RALT_T(KC_DOT)
-#define GM_SLSH RGUI_T(KC_SLSH)
-
-#define GM_QUIT DF(_BASE)
+#define GM_NUM OSL(_GAMING_FUNNUM)
