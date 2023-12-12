@@ -43,3 +43,4 @@
 
 /* Gaming Layer */
 #define GM_NUM OSL(_GAMING_FUNNUM)
+#define GM_SPC ALT_T(KC_SPC)
