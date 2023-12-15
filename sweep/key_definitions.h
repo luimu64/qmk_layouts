@@ -18,6 +18,9 @@
 #define LT_ENT LT(_SYMBOL, KC_ENT)
 
 /* Symbol Layer */
+#define MT_MINS LCTL_T(KC_MINS)
+#define MT_EQL LSFT_T(KC_EQL)
+
 #define MT_HOME RSFT_T(KC_HOME)
 #define MT_INS RCTL_T(KC_INSERT)
 #define MT_DEL RALT_T(KC_DEL)

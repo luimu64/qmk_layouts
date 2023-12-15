@@ -46,8 +46,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   /*   | ` ~     | 1 |     | 2 @     | 3 {     | ! }     |    | ESC     | HOME    | INSERT  | DEL     | END     |   */
          KC_GRV  , KC_1    , KC_2    , KC_3    , SY_EXCL ,      KC_ESC  , MT_HOME , MT_INS  , MT_DEL  , MT_END  ,     
   /*   `-------------------------------------------------|    |-------------------------------------------------'   */
-  /*                                 | - _     |  = +    |    |         | WIN     |                                 */
-                                       KC_MINS ,  KC_EQL ,      KC_TRNS , KC_RGUI     
+  /*                                 | - _     | = +     |    |         | WIN     |                                 */
+                                       MT_MINS , MT_EQL  ,      KC_TRNS , KC_RGUI     
   /*                                 `-------------------'    `-------------------'                                 */
   ),
 
