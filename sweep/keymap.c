@@ -46,8 +46,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   /*   | ` ~     | 1 |     | 2 @     | 3 {     | ! }     |    | ESC     | HOME    | INSERT  | DEL     | END     |   */
          KC_GRV  , KC_1    , KC_2    , KC_3    , SY_EXCL ,      KC_ESC  , MT_HOME , MT_INS  , MT_DEL  , MT_END  ,     
   /*   `-------------------------------------------------|    |-------------------------------------------------'   */
-  /*                                 | - _     | = +     |    |         | WIN     |                                 */
-                                       MT_MINS , MT_EQL  ,      KC_TRNS , KC_RGUI     
+  /*                                 | - _     | = +     |    |         |         |                                 */
+                                       MT_MINS , MT_EQL  ,      KC_TRNS , _______     
   /*                                 `-------------------'    `-------------------'                                 */
   ),
 
@@ -62,8 +62,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   /*   | LED TOG | F1      | F2      | F3      | F10     |    | LED HUE | <<      | PLAY    | >>      | LED SAT |   */
          RGB_TOG , MT_F1   , MT_F2   , MT_F3   , KC_F10  ,      RGB_HUI , MT_MPRV , MT_MPLY , MT_MNXT , RGB_SAI ,     
   /*   `-------------------------------------------------|    |-------------------------------------------------'   */
-  /*                                 | WIN     |         |    | RIGHT   | LEFT    |                                 */
-                                       KC_LGUI , KC_TRNS ,      KC_BTN2 , KC_BTN1
+  /*                                 |         |         |    | RIGHT   | LEFT    |                                 */
+                                       _______ , KC_TRNS ,      KC_BTN2 , KC_BTN1
   /*                                 `-------------------'    `-------------------'                                 */
   ),
 
