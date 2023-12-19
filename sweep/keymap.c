@@ -44,10 +44,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
          KC_SLSH , KC_4    , KC_5    , KC_6    , SY_QUES ,      SY_HASH , KC_LEFT , KC_DOWN , KC_RGHT , KC_PGDN ,     
   /*   |-------------------------------------------------|    |-------------------------------------------------|   */
   /*   | ` ~     | 1 |     | 2 @     | 3 {     | ! }     |    | ESC     | HOME    | INSERT  | DEL     | END     |   */
-         KC_GRV  , KC_1    , KC_2    , KC_3    , SY_EXCL ,      KC_ESC  , MT_HOME , MT_INS  , MT_DEL  , MT_END  ,     
+         KC_GRV  , KC_1    , MT_2    , KC_3    , SY_EXCL ,      KC_ESC  , MT_HOME , MT_INS  , MT_DEL  , MT_END  ,     
   /*   `-------------------------------------------------|    |-------------------------------------------------'   */
   /*                                 | - _     | = +     |    |         |         |                                 */
-                                       MT_MINS , MT_EQL  ,      KC_TRNS , _______     
+                                       MT_MINS , MT_EQL  ,      _______ , _______     
   /*                                 `-------------------'    `-------------------'                                 */
   ),
 
@@ -60,10 +60,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
          FU_PASTE, KC_F4   , KC_F5   , KC_F6   , KC_F11  ,      KC_BTN3 , KC_MS_L , KC_MS_D , KC_MS_R , RGB_VAI ,
   /*   |-------------------------------------------------|    |-------------------------------------------------|   */
   /*   | LED TOG | F1      | F2      | F3      | F10     |    | LED HUE | <<      | PLAY    | >>      | LED SAT |   */
-         RGB_TOG , MT_F1   , MT_F2   , MT_F3   , KC_F10  ,      RGB_HUI , MT_MPRV , MT_MPLY , MT_MNXT , RGB_SAI ,     
+         RGB_TOG , MT_F1   , MT_F2   , MT_F3   , KC_F10  ,      RGB_HUI , KC_MPRV , MT_MPLY , KC_MNXT , RGB_SAI ,     
   /*   `-------------------------------------------------|    |-------------------------------------------------'   */
   /*                                 |         |         |    | RIGHT   | LEFT    |                                 */
-                                       _______ , KC_TRNS ,      KC_BTN2 , KC_BTN1
+                                       _______ , _______ ,      KC_BTN2 , KC_BTN1
   /*                                 `-------------------'    `-------------------'                                 */
   ),
 
