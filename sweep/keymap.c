@@ -78,8 +78,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   /*   | CTRL     | Z       | X       | C       | V      |    | B       | N       | M       | U       | K       |   */
          KC_LCTL  , KC_Z    , KC_X    , KC_C    , KC_V   ,      KC_B    , KC_N    , KC_M    , KC_U    , KC_K    ,     
   /*   `-------------------------------------------------|    |-------------------------------------------------'   */
-  /*                                 | SPACE   | FUN     |    | ENTER   | BSPC    |                                 */
-                                       GM_SPC  , GM_NUM  ,      KC_ENT  , KC_BSPC
+  /*                                 | SPACE   | ALT     |    | ENTER   | BSPC    |                                 */
+                                       KC_SPC  , KC_LALT ,      KC_ENT  , KC_BSPC
   /*                                 `-------------------'    `-------------------'                                 */
   ),
 
@@ -125,14 +125,17 @@ enum combo_events {
     GAMING_ENTER,
     GAMING_LEAVE,
     GAMING_ESC,
+    GAMING_NUM,
 };
 
 const uint16_t PROGMEM gaming_enter_combo[] = {KC_SPC, LT_TAB, COMBO_END};
-const uint16_t PROGMEM gaming_leave_combo[] = {GM_SPC, GM_NUM, COMBO_END};
-const uint16_t PROGMEM gaming_esc_combo[] = {GM_NUM, KC_TAB, COMBO_END};
+const uint16_t PROGMEM gaming_leave_combo[] = {KC_SPC, KC_LALT, COMBO_END};
+const uint16_t PROGMEM gaming_num_layer_combo[] = {KC_LCTL, KC_LALT, COMBO_END};
+const uint16_t PROGMEM gaming_esc_combo[] = {KC_LALT, KC_Q, COMBO_END};
 
 combo_t key_combos[] = {
   [GAMING_ENTER] = COMBO(gaming_enter_combo, DF(_GAMING)),
   [GAMING_LEAVE] = COMBO(gaming_leave_combo, DF(_BASE)),
   [GAMING_ESC] = COMBO(gaming_esc_combo, KC_ESC),
+  [GAMING_NUM] = COMBO(gaming_num_layer_combo, OSL(_GAMING_FUNNUM)),
 };
